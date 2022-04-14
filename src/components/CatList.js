@@ -5,28 +5,29 @@ import CatPic from "../img/cat1.png";
 function CatList() {
   return (
     <div>
-      <Row>
-        <Col>
-          <h1 className="display-4 text-center">My Cats</h1>
-        </Col>
-        <Col>
-          <a href="/newcat" class="btn">
-            <i class="fa-solid fa-plus add"></i>
-          </a>
-        </Col>
-      </Row>
-      <Card className="card rounded mx-3 mt-3 bg-light shadow btn">
-        <Row>
-          <Col >
-            <Image src={CatPic} className="img-thumbnail"/>
-          </Col>
-          <Col className='col-7'>
-          <Row><Col>Name:</Col><Col>Kitty</Col></Row>
-          <Row><Col>Breed:</Col><Col>Tabby</Col></Row>
-          <Row><Col>Age:</Col><Col>6</Col></Row>
-          </Col>
-        </Row>
-      </Card>
+      <a href="/CatProfile/:id" className="nav-link">
+        <Card className="card rounded mx-3 mt-3 bg-light shadow btn">
+          <Row>
+            <Col>
+              <Image src={CatPic} className="img-thumbnail" alt="Cat" />
+            </Col>
+            <Col className="col-7">
+              <Row className="mx-auto my-auto">
+                <Col><Card.Text>Name:</Card.Text></Col>
+                <Col><Card.Text>Kitty</Card.Text></Col>
+              </Row>
+              <Row>
+              <Col><Card.Text>Breed:</Card.Text></Col>
+              <Col><Card.Text>Tabby</Card.Text></Col>
+              </Row>
+              <Row>
+              <Col><Card.Text>Age:</Card.Text></Col>
+              <Col><Card.Text>6</Card.Text></Col>
+              </Row>
+            </Col>
+          </Row>
+        </Card>
+      </a>
     </div>
   );
 }

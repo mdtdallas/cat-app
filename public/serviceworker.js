@@ -1,5 +1,5 @@
 const CACHE_NAME = 'version-1'
-const urlsToCache = ['index.html']
+const urlsToCache = ['index.html', 'AddAward.js', 'CatProfile.js', 'ErrorPage.js', 'SignIn.js', 'SignUp.js', 'App.js', 'index.js', 'serviceworker.js']
 
 const self = this;
 // Install SW
@@ -18,7 +18,7 @@ self.addEventListener('fetch', (event) => {
         caches.match(event.request)
         .then(() => {
             return fetch(event.request)
-            .catch(() => caches.match('offline.html'))
+            .catch(() => caches.match('index.html'))
         })
     )
 });
