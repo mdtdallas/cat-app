@@ -1,5 +1,5 @@
 const CACHE_NAME = 'version-1'
-const urlsToCache = ['index.html', 'AddAward.js', 'CatProfile.js', 'ErrorPage.js', 'SignIn.js', 'SignUp.js', 'App.js', 'index.js', 'serviceworker.js']
+const urlsToCache = ['index.html', 'AddAward.js', 'CatProfile.js', 'ErrorPage.js', 'SignIn.js', 'SignUp.js', 'App.js', 'index.js']
 
 const self = this;
 // Install SW

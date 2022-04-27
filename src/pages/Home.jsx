@@ -4,6 +4,7 @@ import { Card, Row, Col, Container } from "react-bootstrap";
 import CatList from "../components/CatList";
 
 const Home = () => {
+  
   return (
     <div>
       <h1 className="display-1 text-center">Profile</h1>

@@ -13,16 +13,28 @@ function CatList() {
             </Col>
             <Col className="col-7">
               <Row className="mx-auto my-auto">
-                <Col><Card.Text>Name:</Card.Text></Col>
-                <Col><Card.Text>Kitty</Card.Text></Col>
+                <Col>
+                  <Card.Text>Name:</Card.Text>
+                </Col>
+                <Col>
+                  <Card.Text>Kitty</Card.Text>
+                </Col>
               </Row>
               <Row>
-              <Col><Card.Text>Breed:</Card.Text></Col>
-              <Col><Card.Text>Tabby</Card.Text></Col>
+                <Col>
+                  <Card.Text>Breed:</Card.Text>
+                </Col>
+                <Col>
+                  <Card.Text>Tabby</Card.Text>
+                </Col>
               </Row>
               <Row>
-              <Col><Card.Text>Age:</Card.Text></Col>
-              <Col><Card.Text>6</Card.Text></Col>
+                <Col>
+                  <Card.Text>Age:</Card.Text>
+                </Col>
+                <Col>
+                  <Card.Text>6</Card.Text>
+                </Col>
               </Row>
             </Col>
           </Row>
