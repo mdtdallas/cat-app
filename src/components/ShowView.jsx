@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Button, Form, Container } from "react-bootstrap";
+import { Spinner } from 'reactstrap'
 import CatsNSW from "../img/CatsNSW.jpg";
+
 
 const MapURL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.7686062359303!2d153.01621141560116!3d-27.476462323570043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0968742765%3A0x53b5b99532970ee3!2sBrisbane%20Convention%20%26%20Exhibition%20Centre!5e0!3m2!1sen!2sau!4v1645768985924!5m2!1sen!2sau";
 
-const ShowView = () => {
+const ShowView = ({ showID }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:8080/api/showsShowID/1")
+    
+    fetch(`http://localhost:8080/api/showsShowID/${showID}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`This is an HTTP error ${response.status}`);
@@ -33,7 +36,7 @@ const ShowView = () => {
 
   return (
     <div>
-      {loading && <div>A moment please...</div>}
+      {loading && <div className="ms-5 mt-5"><Spinner className="ms-5 mt-5"/></div>}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
@@ -45,7 +48,6 @@ const ShowView = () => {
             location,
             date,
             council,
-            ticket_price,
             ticket_count,
             image_path,
           }) => {

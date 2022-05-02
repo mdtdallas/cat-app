@@ -30,10 +30,10 @@ const CatDetailsCard = () => {
       </Row>
       <Row>
         <Col>
-          <i class="fa-solid fa-pen-to-square btn"></i>
+          <i className="fa-solid fa-pen-to-square btn"></i>
         </Col>
         <Col>
-          <i class="fa-solid fa-trash-can btn"></i>
+          <i className="fa-solid fa-trash-can btn"></i>
         </Col>
       </Row>
     </Card>
