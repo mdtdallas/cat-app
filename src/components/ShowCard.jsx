@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Container, Card, Button } from 'react-bootstrap'
+import { Spinner } from 'reactstrap'
 import {Link} from 'react-router-dom'
 
 function Shows() {
@@ -29,7 +30,7 @@ function Shows() {
 
   return (
     <div>
-      {loading && <div>A moment please...</div>}
+      {loading && <div ><Spinner className="my-auto"/></div>}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
@@ -38,7 +39,7 @@ function Shows() {
           data.map(({ showID, title, location, image_path, date }) => (
             <>
               <Container key={showID}>
-                <Card as={Link} to={"/show/:id"} className="rounded-50 shadow">
+                <Card as={Link} to={`/show/${showID}`} className="rounded-50 shadow mb-2">
                   <Row>
                     <div className="text-center display-5">
                       {title}
