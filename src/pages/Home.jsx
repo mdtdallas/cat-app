@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Container } from "react-bootstrap";
 import CatList from "../components/CatList";
+import { Spinner } from 'reactstrap';
 
 function Home() {
   const email = window.localStorage.getItem('email')
@@ -31,12 +32,12 @@ function Home() {
   
   return (
     <div>
-      {loading && <div>A moment please...</div>}
+      {loading && <div><Spinner/></div>}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
       {data && data.map(({ name, phone, email, img_path }) => (
-        <Container>
+        <Container key={email}>
         <h1 className="display-1 text-center">Profile</h1>
         <img
           src={img_path}
@@ -91,3 +92,4 @@ function Home() {
 };
 
 export default Home;
+
