@@ -1,5 +1,5 @@
 import React from 'react'
-import ShowView from '../components/ShowView'
+import ShowView from '../components/[ShowView]'
 
 const Show = () => {
   return (

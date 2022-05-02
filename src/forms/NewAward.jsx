@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState }from "react";
 import { Form, FormLabel, Row, Col, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 
 const NewAward = () => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   let validationParams = Yup.object().shape({
     title: Yup.string().required('Award Title required'),
     year: Yup.number().required('Year is required').max(4, 'Enter year only').min(4)
@@ -14,8 +17,29 @@ const NewAward = () => {
       year: ''
     },
     validationSchema: validationParams,
-    onSubmit: (values) => {
-
+    onSubmit: values => {
+      fetch('http://localhost:8080/api/awards/create', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(values)
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`This is an HTTP error ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+        setError(null);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setData(null);
+      })
+      .finally(() => {
+        setLoading(false);
+      })
     }
   })
   return (

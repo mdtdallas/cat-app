@@ -10,8 +10,10 @@ import CatProfile from './pages/CatProfile';
 import AddAward from "./pages/AddAward";
 import Shows from "./pages/Shows";
 import Show from "./pages/Show";
+import NewCat from './pages/NewCat';
+import NewShow from "./pages/NewShow";
 import { ThemeProvider } from 'styled-components';
-import {lightTheme, darkTheme, GlobalStyles, greenTheme} from './theme'
+import {lightTheme, GlobalStyles, greenTheme} from './theme'
 
 
 function App() {
@@ -51,6 +53,8 @@ function App() {
           <Route path="/addaward" element={<AddAward/>}/>
           <Route path='/shows' element={<Shows/>}/>
           <Route path='/show/:id' element={<Show/>}/>
+          <Route path='/newCat' element={<NewCat/>}/>
+          <Route path='/newshow' element={<NewShow/>}/>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
