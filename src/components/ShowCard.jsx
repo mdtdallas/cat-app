@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Col, Row, Container, Card, Button, Spinner } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Col, Row, Container, Card, Button } from "react-bootstrap";
+import { Spinner } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function Shows() {
   const [data, setData] = useState(null);
@@ -39,15 +40,21 @@ function Shows() {
           data.map(({ showID, title, location, image_path, date }) => (
             <>
               <Container key={showID}>
-                <Card as={Link} to={"/show/:id"} className="rounded-50 shadow">
+                <Card
+                  as={Link}
+                  to={`/show/${showID}`}
+                  className="rounded-50 shadow mb-2"
+                >
                   <Row>
-                    <div className="text-center display-5">
-                      {title}
-                    </div>
+                    <div className="text-center display-5">{title}</div>
                   </Row>
                   <Row>
                     <Col>
-                      <img src={image_path} alt="" className="img-thumbnail m-4" />
+                      <img
+                        src={image_path}
+                        alt=""
+                        className="img-thumbnail m-4"
+                      />
                     </Col>
                     <Col>
                       <Row>
@@ -56,7 +63,9 @@ function Shows() {
                       <Row>
                         <div className="fs-4 pt-2">{location}</div>
                       </Row>
-                      <Button as={Link} to={'/show/:id'} className="fs-4 mt-2">Enter Show</Button>
+                      <Button as={Link} to={"/show/:id"} className="fs-4 mt-2">
+                        Enter Show
+                      </Button>
                     </Col>
                   </Row>
                 </Card>

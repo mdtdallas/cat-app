@@ -8,7 +8,7 @@ const AwardsList = () => {
           <Col className="col-10">
           <div className="display-4 text-center ms-5">Awards</div>
           </Col>
-          <Col><a href="/addaward" class="col-2"><i class="fa-solid fa-plus add"></i></a></Col>
+          <Col><a href="/addaward" className="col-2"><i class="fa-solid fa-plus add"></i></a></Col>
       </Row>
     </div>
   )
