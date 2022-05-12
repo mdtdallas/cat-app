@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Col, Row, Container, Card, Button } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Col, Row, Container, Card, Button, Spinner } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Shows() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
+    
     fetch("http://localhost:8080/api/shows")
       .then((response) => {
         if (!response.ok) {
@@ -29,7 +30,7 @@ function Shows() {
 
   return (
     <div>
-      {loading && <div>A moment please...</div>}
+      {loading && <Spinner/>}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
